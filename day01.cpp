@@ -1,61 +1,68 @@
-#include <iostream>
-#include <fstream>
-#include <vector>
-#include <algorithm>
-#include <cmath>
+#include "include/Day01.hpp"
 
-int calculate_dist(std::vector<int>& first, std::vector<int>& second)
+int Day01::calculateDist()
 {
-    int sum_of_diff = 0;
-    for (unsigned int i = 0; i < first.size(); i++)
+    int sumOfDiff = 0;
+
+    for (unsigned int i = 0; i < _firstColume.size(); i++)
     {
-        int current_diff = std::abs(first[i] - second[i]);
-        sum_of_diff += current_diff;
+        int currentDiff = std::abs(_firstColume[i] - _secondColume[i]);
+        sumOfDiff += currentDiff;
     }
-    return sum_of_diff;
+
+    return sumOfDiff;
 }
 
-int calculate_similarity_score(std::vector<int>& first, std::vector<int>& second)
+int Day01::calculateSimilarityScore()
 {
     int num;
-    int similarity_score;
-    for (unsigned int i = 0; i < first.size(); i++)
+    int counter;
+    int similarityScore = 0;
+
+    for (unsigned int i = 0; i < _firstColume.size(); i++)
     {
-        num = first[i];
-        int counter = 0;
-        for (unsigned int j = 0; j < second.size(); j++)
+        num = _firstColume[i];
+        counter = 0;
+        for (unsigned int j = 0; j < _secondColume.size(); j++)
         {
-            if (num == second[j])
+            if (num == _secondColume[j])
                 counter++;
         }
-        similarity_score += num * counter;
+        similarityScore += num * counter;
     }
-    return similarity_score;
+
+    return similarityScore;
+}
+
+void Day01::loadData(const std::string &fileName)
+{
+    std::ifstream file(fileName);
+    int num;
+    while (file >> num)
+    {
+        _firstColume.push_back(num);
+        file >> num;
+        _secondColume.push_back(num);
+    }
 }
 
 int main()
 {
-    // load data into 2 vectors
-    std::ifstream file("input/day01.txt");
-    std::vector<int> first_colume;
-    std::vector<int> second_colume;
-    int num;
-    while (file >> num)
-    {
-        first_colume.push_back(num);
-        file >> num;
-        second_colume.push_back(num);
-    }
+    Day01 day01;
+    day01.loadData("input/day01.txt");
+
+    std::vector<int>& _firstColume = day01.getFirstColume();
+    std::vector<int>& _secondColume = day01.getSecondColume();
 
     // sort both vectors in ascending order
-    std::sort(first_colume.begin(), first_colume.end());
-    std::sort(second_colume.begin(), second_colume.end());
+    std::sort(_firstColume.begin(), _firstColume.end());
+    std::sort(_secondColume.begin(), _secondColume.end());
 
     // PART 1
-    int sum_of_diff = calculate_dist(first_colume, second_colume);
-    std::cout << "sum_of_diff: " << sum_of_diff << "\n";
+    int sumOfDiff = day01.calculateDist();
+    std::cout << "part1: " << sumOfDiff << "\n";
 
     // PART 2
-    int similarity_score = calculate_similarity_score(first_colume, second_colume);
-    std::cout << "similarity_score: " << similarity_score << "\n";
+    int similarityScore = day01.calculateSimilarityScore();
+    std::cout << "part2: " << similarityScore << "\n";
 }
