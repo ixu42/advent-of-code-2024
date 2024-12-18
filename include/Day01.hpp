@@ -10,7 +10,7 @@
 class Day01
 {
     public:
-        void loadData(const std::string &fileName);
+        void loadData(const std::string& fileName);
         int calculateDist();
         int calculateSimilarityScore();
         std::vector<int>& getFirstColume() { return _firstColume; }

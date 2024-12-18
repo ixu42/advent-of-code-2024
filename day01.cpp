@@ -34,7 +34,7 @@ int Day01::calculateSimilarityScore()
     return similarityScore;
 }
 
-void Day01::loadData(const std::string &fileName)
+void Day01::loadData(const std::string& fileName)
 {
     std::ifstream file(fileName);
     int num;

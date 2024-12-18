@@ -1,6 +1,6 @@
 #include "include/Day02.hpp"
 
-bool Day02::checkDiff(const std::vector<int> &report)
+bool Day02::checkDiff(const std::vector<int>& report)
 {
     for (int i = 0; i < report.size() - 1; i++)
     {
@@ -34,7 +34,7 @@ bool Day02::isSafe(std::vector<int>& report)
     return checkDiff(report);
 }
 
-bool Day02::isIncreasing(const std::vector<int> &report)
+bool Day02::isIncreasing(const std::vector<int>& report)
 {
     for (int i = 0; i < report.size() - 1; i++)
     {
@@ -44,7 +44,7 @@ bool Day02::isIncreasing(const std::vector<int> &report)
     return true;
 }
 
-bool Day02::isIncreasingIfRemoveOne(const std::vector<int> &report, size_t index)
+bool Day02::isIncreasingIfRemoveOne(const std::vector<int>& report, size_t index)
 {
     std::vector<int> temp = report;
     temp.erase(temp.begin() + index);
@@ -65,7 +65,7 @@ bool Day02::isIncreasingIfRemoveOne(const std::vector<int> &report, size_t index
     return false;
 }
 
-bool Day02::canBecomeIncreasing(const std::vector<int> &report)
+bool Day02::canBecomeIncreasing(const std::vector<int>& report)
 {
     size_t index;
     bool isAscending = true;
@@ -86,7 +86,7 @@ bool Day02::canBecomeIncreasing(const std::vector<int> &report)
     return true;
 }
 
-bool Day02::isDecreasing(const std::vector<int> &report)
+bool Day02::isDecreasing(const std::vector<int>& report)
 {
     for (int i = 0; i < report.size() - 1; i++)
     {
@@ -96,7 +96,7 @@ bool Day02::isDecreasing(const std::vector<int> &report)
     return true;
 }
 
-bool Day02::isDecreasingIfRemoveOne(const std::vector<int> &report, size_t index)
+bool Day02::isDecreasingIfRemoveOne(const std::vector<int>& report, size_t index)
 {
     std::vector<int> temp = report;
     temp.erase(temp.begin() + index);
@@ -117,7 +117,7 @@ bool Day02::isDecreasingIfRemoveOne(const std::vector<int> &report, size_t index
     return false;
 }
 
-bool Day02::canBecomeDecreasing(const std::vector<int> &report)
+bool Day02::canBecomeDecreasing(const std::vector<int>& report)
 {
     size_t index;
     bool isDescending = true;
@@ -207,7 +207,7 @@ void Day02::printReport(std::vector<int>& report)
     std::cout << "\n";
 }
 
-void Day02::loadData(const std::string &fileName)
+void Day02::loadData(const std::string& fileName)
 {
     std::ifstream file(fileName);
     int num;
