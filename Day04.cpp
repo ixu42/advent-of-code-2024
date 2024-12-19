@@ -77,9 +77,9 @@ void Day04::solvePart1()
                         updateData[i + 3][j + 3] = 'S';
                         _resPart1++;
                     }
-                if (i + 1 < _data.size() && j - 1 >= 0 && _data[i + 1][j - 1] == 'M'
-                    && i + 2 < _data.size() && j - 2 >= 0 && _data[i + 2][j - 2] == 'A'
-                    && i + 3 < _data.size() && j - 3 >= 0 && _data[i + 3][j - 3] == 'S')
+                if (i + 1 < _data.size() && j >= 1 && _data[i + 1][j - 1] == 'M'
+                    && i + 2 < _data.size() && j >= 2 && _data[i + 2][j - 2] == 'A'
+                    && i + 3 < _data.size() && j >= 3 && _data[i + 3][j - 3] == 'S')
                     {
                         updateData[i][j] = 'X';
                         updateData[i + 1][j - 1] = 'M';
@@ -120,9 +120,9 @@ void Day04::solvePart1()
                         updateData[i + 3][j + 3] = 'X';
                         _resPart1++;
                     }
-                if (i + 1 < _data.size() && j - 1 >= 0 && _data[i + 1][j - 1] == 'A'
-                    && i + 2 < _data.size() && j - 2 >= 0 && _data[i + 2][j - 2] == 'M'
-                    && i + 3 < _data.size() && j - 3 >= 0 && _data[i + 3][j - 3] == 'X')
+                if (i + 1 < _data.size() && j >= 1 && _data[i + 1][j - 1] == 'A'
+                    && i + 2 < _data.size() && j >= 2 && _data[i + 2][j - 2] == 'M'
+                    && i + 3 < _data.size() && j >= 3 && _data[i + 3][j - 3] == 'X')
                     {
                         updateData[i][j] = 'S';
                         updateData[i + 1][j - 1] = 'A';
