@@ -1,8 +1,8 @@
-#include "include/Day02.hpp"
+#include "../include/Day02.hpp"
 
 bool Day02::checkDiff(const std::vector<int>& report)
 {
-    for (int i = 0; i < report.size() - 1; i++)
+    for (size_t i = 0; i < report.size() - 1; i++)
     {
         int diff = std::abs(report[i + 1] - report[i]);
         if (diff > 3 || diff < 1)
@@ -19,7 +19,7 @@ bool Day02::isSafe(std::vector<int>& report)
     // check if the levels are either all increasing or all decreasing
     bool increasing = true;
     bool decreasing = true;
-    for (int i = 0; i < report.size() - 1; i++)
+    for (size_t i = 0; i < report.size() - 1; i++)
     {
         if (report[i] < report[i + 1])
             decreasing = false;
@@ -36,7 +36,7 @@ bool Day02::isSafe(std::vector<int>& report)
 
 bool Day02::isIncreasing(const std::vector<int>& report)
 {
-    for (int i = 0; i < report.size() - 1; i++)
+    for (size_t i = 0; i < report.size() - 1; i++)
     {
         if (report[i] >= report[i + 1])
             return false;
@@ -88,7 +88,7 @@ bool Day02::canBecomeIncreasing(const std::vector<int>& report)
 
 bool Day02::isDecreasing(const std::vector<int>& report)
 {
-    for (int i = 0; i < report.size() - 1; i++)
+    for (size_t i = 0; i < report.size() - 1; i++)
     {
         if (report[i] <= report[i + 1])
             return false;
@@ -123,7 +123,7 @@ bool Day02::canBecomeDecreasing(const std::vector<int>& report)
     bool isDescending = true;
     _tempReports.push_back(report);
 
-    for (int i = 0; i < report.size() - 1; i++)
+    for (size_t i = 0; i < report.size() - 1; i++)
     {
         if (report[i] <= report[i + 1])
         {
@@ -143,7 +143,7 @@ bool Day02::checkDiffIfRemoveOne(std::vector<int>& report)
     size_t index;
     bool diffOk = true;
 
-    for (int i = 0; i < report.size() - 1; i++)
+    for (size_t i = 0; i < report.size() - 1; i++)
     {
         int diff = std::abs(report[i + 1] - report[i]);
         if (diff > 3 || diff < 1)

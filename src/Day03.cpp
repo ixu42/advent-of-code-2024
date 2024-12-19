@@ -1,4 +1,4 @@
-#include "include/Day03.hpp"
+#include "../include/Day03.hpp"
 
 bool Day03::loadData(const std::string& fileName)
 {
@@ -99,7 +99,7 @@ void Day03::solvePart2()
     size_t prevPosMul = 0;
     size_t posDo;
     size_t posDont;
-    long long _res = 0;
+    _res = 0;
 
     while (posMul != std::string::npos)
     {
