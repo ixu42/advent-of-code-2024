@@ -29,6 +29,6 @@ class Day05
         bool isInRightOrder(int left, int right);
         void checkOrder(std::vector<int>& update, bool& correctlyOrdered);
         std::vector<int> reorderUpdate(std::vector<int>& update);
-        std::vector<int> topologicalSort(std::unordered_map<int, std::vector<int>> graph, 
+        std::vector<int> topologicalSort(std::unordered_map<int, std::vector<int>>& graph, 
                                             std::unordered_map<int, int>& inDegree);
 };

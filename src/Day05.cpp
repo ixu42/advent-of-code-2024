@@ -117,7 +117,7 @@ void Day05::solvePart1()
     std::cout << "part1: " << _resPart1 << "\n";
 }
 
-std::vector<int> Day05::topologicalSort(std::unordered_map<int, std::vector<int>> graph, 
+std::vector<int> Day05::topologicalSort(std::unordered_map<int, std::vector<int>>& graph, 
                                         std::unordered_map<int, int>& inDegree)
 {
     std::queue<int> q;
