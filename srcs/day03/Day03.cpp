@@ -1,4 +1,4 @@
-#include "../include/Day03.hpp"
+#include "../../include/Day03.hpp"
 
 bool Day03::loadData(const std::string& fileName)
 {
@@ -120,13 +120,4 @@ void Day03::solvePart2()
         posMul = _data.find("mul(", posMul + 1);
     }
     std::cout << "part2: " << _res << "\n";
-}
-
-int main()
-{
-    Day03 day03;
-    if (!day03.loadData("input/Day03.txt"))
-        return 1;
-    day03.solvePart1();
-    day03.solvePart2();
 }

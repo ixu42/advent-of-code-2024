@@ -1,4 +1,4 @@
-#include "../include/Day08.hpp"
+#include "../../include/Day08.hpp"
 
 void Day08::printGrid(std::vector<std::vector<char>>& grid)
 {
@@ -162,13 +162,4 @@ void Day08::solvePart2()
         drawAntinode(point, grid);
     // printGrid(grid);
     std::cout << "part2: " << calculateAntinode(grid) << "\n";
-}
-
-int main()
-{
-    Day08 day08;
-    if (!day08.loadData("input/day08.txt"))
-        return 1;
-    day08.solvePart1();
-    day08.solvePart2();
 }

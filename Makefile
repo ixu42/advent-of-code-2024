@@ -1,5 +1,4 @@
 NAME_PREFIX := aocSolver_
-SRC_DIR := ./src
 BIN_DIR := ./bin
 FLAGS := -Wall -Wextra -Werror -Wshadow -std=c++17
 COMPILER := c++
@@ -10,7 +9,8 @@ YELLOW := \033[0;33m
 COLOR_RESET := \033[0m
 
 DAY ?= 01
-SRC := $(SRC_DIR)/Day$(DAY).cpp
+SRC_DIR := ./srcs/day$(DAY)
+SRC := $(SRC_DIR)/Day$(DAY).cpp $(SRC_DIR)/main.cpp
 NAME := $(BIN_DIR)/$(NAME_PREFIX)$(DAY)
 
 all:

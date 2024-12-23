@@ -1,4 +1,4 @@
-#include "../include/Day04.hpp"
+#include "../../include/Day04.hpp"
 
 void Day04::printGrid(std::vector<std::vector<char>> grid)
 {
@@ -209,13 +209,4 @@ void Day04::solvePart2()
     /* uncomment to print the grid after each irrelevant char is replaced with '.' */
     // printGrid(updateData);
     std::cout << "part2: " << _resPart2 << "\n";
-}
-
-int main()
-{
-    Day04 day04;
-    if (!day04.loadData("input/Day04.txt"))
-        return 1;
-    day04.solvePart1();
-    day04.solvePart2();
 }

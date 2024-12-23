@@ -1,4 +1,4 @@
-#include "../include/Day07.hpp"
+#include "../../include/Day07.hpp"
 
 void Day07::printData()
 {
@@ -130,13 +130,4 @@ void Day07::solvePart2()
             res += testValue;
     }
     std::cout << "part2: " << res << "\n";
-}
-
-int main()
-{
-    Day07 day07;
-    if (!day07.loadData("input/day07.txt"))
-        return 1;
-    day07.solvePart1();
-    day07.solvePart2();
 }

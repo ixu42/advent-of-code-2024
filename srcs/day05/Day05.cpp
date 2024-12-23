@@ -1,4 +1,4 @@
-#include "../include/Day05.hpp"
+#include "../../include/Day05.hpp"
 
 void Day05::loadRules(const std::string& line)
 {
@@ -188,13 +188,4 @@ void Day05::solvePart2()
         }
     }
     std::cout << "part2: " << _resPart2 << "\n";
-}
-
-int main()
-{
-    Day05 day05;
-    if (!day05.loadData("input/day05.txt"))
-        return 1;
-    day05.solvePart1();
-    day05.solvePart2();
 }
