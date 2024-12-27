@@ -1,4 +1,4 @@
-#include "../../include/Day05.hpp"
+#include "Day05.hpp"
 
 void Day05::loadRules(const std::string& line)
 {

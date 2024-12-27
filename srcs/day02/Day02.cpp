@@ -1,4 +1,4 @@
-#include "../../include/Day02.hpp"
+#include "Day02.hpp"
 
 bool Day02::checkDiff(const std::vector<int>& report)
 {

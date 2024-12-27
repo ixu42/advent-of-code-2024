@@ -1,4 +1,4 @@
-#include "../../include/Day07.hpp"
+#include "Day07.hpp"
 
 void Day07::printData()
 {

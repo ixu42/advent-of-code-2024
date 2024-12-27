@@ -1,4 +1,4 @@
-#include "../../include/Day01.hpp"
+#include "Day01.hpp"
 
 int Day01::calculateDist()
 {

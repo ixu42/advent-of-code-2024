@@ -1,4 +1,4 @@
-#include "../../include/Day03.hpp"
+#include "Day03.hpp"
 
 int main()
 {

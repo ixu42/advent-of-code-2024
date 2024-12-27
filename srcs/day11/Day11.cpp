@@ -1,4 +1,4 @@
-#include "../../include/Day11.hpp"
+#include "Day11.hpp"
 
 bool Day11::loadData(const std::string& filename)
 {

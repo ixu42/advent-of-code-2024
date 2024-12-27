@@ -1,4 +1,4 @@
-#include "../../include/Day06.hpp"
+#include "Day06.hpp"
 
 void Day06::printGrid(const std::vector<std::vector<char>>& grid)
 {

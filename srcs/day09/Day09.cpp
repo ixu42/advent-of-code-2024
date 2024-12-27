@@ -1,4 +1,4 @@
-#include "../../include/Day09.hpp"
+#include "Day09.hpp"
 
 void Day09::printLine(const std::vector<int>& line)
 {
