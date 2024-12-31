@@ -157,7 +157,7 @@ bool Day14::checkTree(int xMax, int yMax, IntGrid& grid, BoolGrid& visited)
                 unvisited++;
                 if (unvisited > 42)
                 {   
-                    // printGrid(xMax, yMax, grid);
+                    printGrid(xMax, yMax, grid);
                     return true;
                 }
             }
