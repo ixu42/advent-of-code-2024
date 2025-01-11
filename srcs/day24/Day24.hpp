@@ -8,12 +8,14 @@
 #include <unordered_map>
 #include <map>
 #include <vector>
+#include <set>
 
 class Day24
 {
     public:
         void loadData(const std::string& filename);
         void solvePart1();
+        void solvePart2();
 
     private:
         std::unordered_map<std::string, int> _wires;
@@ -24,5 +26,9 @@ class Day24
         void printInstructions() const;
         void processInstructions();
         int64_t binaryToDecimal(const std::string& binary) const;
-
+        std::string decimalToBinary(int64_t decimal) const;
+        void printCorrectBinaryForZ() const;
+        bool inputsWithXY(const std::string a, const std::string b) const;
+        bool inputsEndIn00(const std::string a, const std::string b) const;
+        std::set<std::string> findFaultyWires() const;
 };
