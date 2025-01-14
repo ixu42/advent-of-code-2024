@@ -179,3 +179,64 @@ void Day21::solvePart1()
     }
     std::cout << "part1: " << totalComplexity << "\n";
 }
+
+int64_t Day21::getCost(char a, char b, const CharGrid& keypad, int depth)
+{
+    static std::map<std::tuple<char, char, int>, int64_t> cache;
+    auto cacheKey = std::make_tuple(a, b, depth);
+
+    if (cache.find(cacheKey) != cache.end())
+        return cache[cacheKey];
+
+    if (depth == 0) // reaching the bot controlled by human
+    {
+        std::vector<std::string> sequences = bfs(DIRPAD, a, b);
+        int64_t minCost = std::numeric_limits<int64_t>::max();
+        for (const auto& seq : sequences)
+            minCost = std::min(minCost, static_cast<int64_t>(seq.size()));
+        cache[cacheKey] = minCost;
+        return minCost;
+    }
+
+    std::vector<std::string> sequences = bfs(keypad, a, b);
+    int64_t minCost = std::numeric_limits<int64_t>::max();
+    for (const auto& s : sequences)
+    {
+        std::string seq = 'A' + s;
+        int64_t cost = 0;
+        for (int64_t i = 0; i < static_cast<int64_t>(seq.size()) - 1; ++i)
+        {
+            char a1 = seq[i];
+            char b1 = seq[i + 1];
+            cost += getCost(a1, b1, DIRPAD, depth - 1);
+        }
+        minCost = std::min(minCost, cost);
+    }
+
+    cache[cacheKey] = minCost;
+    return minCost;
+}
+
+int64_t Day21::getCodeCost(const std::string& code, int depth)
+{
+    int64_t cost = 0;
+    for (int64_t i = 0; i < static_cast<int64_t>(code.size()) - 1; ++i)
+    {
+        char a = code[i];
+        char b = code[i + 1];
+        cost += getCost(a, b, NUMPAD, depth);
+    }
+    return cost;
+}
+
+void Day21::solvePart2()
+{
+    int64_t totalComplexity = 0;
+    for (const auto& code : _codes)
+    {
+        int64_t numericPart = stoi(code);
+        int64_t cost = getCodeCost("A" + code, 25);
+        totalComplexity += numericPart * cost;
+    }
+    std::cout << "part2: " << totalComplexity << "\n";
+}

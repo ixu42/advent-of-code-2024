@@ -10,14 +10,15 @@
 #include <map>
 #include <utility>
 #include <algorithm>
-#include <chrono>
+#include <limits>
+#include <tuple>
 
 class Day21
 {
     public:
         void loadData(const std::string& filename);
         void solvePart1();
-        // void solvePart2();
+        void solvePart2();
 
     private:
         struct Pos
@@ -51,9 +52,14 @@ class Day21
 
         std::vector<std::string> _codes;
 
+        // part1
         void getCharPos(const CharGrid& keypad, char num, int& y, int& x);
         bool isValid(const CharGrid& keypad, int y, int x);
         std::vector<std::string> bfs(const CharGrid& keypad, char start, char target);
         std::vector<std::string> getSeqForNumPad(const std::string& code);
         std::vector<std::string> getSeqForDirPad(const std::vector<std::string>& curSeq);
+
+        // part2
+        int64_t getCost(char a, char b, const CharGrid& keypad, int depth);
+        int64_t getCodeCost(const std::string& code, int depth);
 };
